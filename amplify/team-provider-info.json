@@ -1,0 +1,34 @@
+{
+  "staging": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-techly-staging-113341-authRole",
+      "UnauthRoleArn": "arn:aws:iam::528141356647:role/amplify-techly-staging-113341-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::528141356647:role/amplify-techly-staging-113341-authRole",
+      "Region": "us-west-1",
+      "DeploymentBucketName": "amplify-techly-staging-113341-deployment",
+      "UnauthRoleName": "amplify-techly-staging-113341-unauthRole",
+      "StackName": "amplify-techly-staging-113341",
+      "StackId": "arn:aws:cloudformation:us-west-1:528141356647:stack/amplify-techly-staging-113341/68da3a30-3a6a-11ed-8539-0232e9fba41d",
+      "AmplifyAppId": "d5r86hxq01ygw"
+    },
+    "categories": {
+      "auth": {
+        "Techly": {}
+      },
+      "function": {
+        "CreatePaymentIntent": {
+          "deploymentBucketName": "amplify-techly-staging-113341-deployment",
+          "s3Key": "amplify-builds/CreatePaymentIntent-49364c6539656c726e39-build.zip"
+        },
+        "StripeWebhook": {
+          "deploymentBucketName": "amplify-techly-staging-113341-deployment",
+          "s3Key": "amplify-builds/StripeWebhook-746e63415773464b2b34-build.zip"
+        }
+      },
+      "api": {
+        "Techly": {},
+        "StripeWebhook": {}
+      }
+    }
+  }
+}

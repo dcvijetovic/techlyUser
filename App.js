@@ -1,20 +1,35 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { Amplify } from 'aws-amplify';
+import { withAuthenticator } from 'aws-amplify-react-native';
+import { StripeProvider } from '@stripe/stripe-react-native';
 
-export default function App() {
+import RootNavigator from './src/navigation';
+import config from './src/aws-exports';
+import AuthContextProvider from './src/context/AuthContext';
+import CartContextProvider from './src/context/CartContext';
+import OrderContextProvider from './src/context/OrderContext';
+
+Amplify.configure({ ...config, Analytics: { disabled: true } });
+
+function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+    <NavigationContainer>
+      <StripeProvider publishableKey='pk_test_51LnkhRGLvk2ePqSaFJsEgOXudUi2KcJOr2phcY061JDV6SBuWU2mBwjlWkuYwGxfoRjysfrHUPuajkHkUFSpoTbk00IJGF95Bx'
+      
+      >
+        <AuthContextProvider>
+          <CartContextProvider>
+            <OrderContextProvider>
+              <RootNavigator />
+            </OrderContextProvider>
+          </CartContextProvider>
+        </AuthContextProvider>
+      </StripeProvider>
+
       <StatusBar style="auto" />
-    </View>
+    </NavigationContainer>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default withAuthenticator(App);

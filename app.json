@@ -2,7 +2,8 @@
   "expo": {
     "name": "user",
     "slug": "user",
-    "version": "1.0.0",
+    "version": "1.1.0",
+    "owner": "dcvijetovic",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
